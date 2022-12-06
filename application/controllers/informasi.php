@@ -12,5 +12,4 @@ class informasi extends CI_Controller {
 		$this->load->view('template/header', $data);
 		$this->load->view('informasi');
 	}
-
 }
