@@ -23,5 +23,4 @@ class informasi extends CI_Controller {
 		$this->load->view('informasi/id_berita', $data);
 
 	}
-
 }
