@@ -3,7 +3,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Auth_model extends CI_Model
 {
-	function __construct() {
+	function __construct()
+	{
 		parent::__construct();
 		$this->load->database();
 	}
@@ -11,60 +12,36 @@ class Auth_model extends CI_Model
 	private $_table = "user";
 	const SESSION_KEY = 'user_id';
 
-	public function rules()
-	{
-		return [
-			[
-				'field' => 'username',
-				'label' => 'Username or Email',
-				'rules' => 'required'
-			],
-			[
-				'field' => 'password',
-				'label' => 'Password',
-				'rules' => 'required|max_length[255]'
-			]
-		];
-	}
-
 	public function login()
 	{
 		$uname = $_POST['username'];
 		$passwd = $_POST['password'];
 		$length = strlen($uname);
-		if($length > 8){
+		if ($length > 8) {
 			$sql = "SELECT * FROM guru where nip='$uname' and password='$passwd'";
 			$hasil = $this->db->query($sql);
-			// $data = $hasil->result_array();
-			
-		}else{
+
+		} else {
 			$sql = "SELECT * FROM siswa where nis='$uname' and password='$passwd'";
 			$hasil = $this->db->query($sql);
-			// $data = $hasil->result_array();
 		}
-		
+
 		$user = $hasil->row();
-		// cek apakah user sudah terdaftar?
+
 		if (!$user) {
 			redirect('home');
 		}
-		// cek apakah passwordnya benar?
-		if (!password_verify($passwd, $user->password)) {
-			return FALSE;
-		}
+
+		// foreach ($user as $row) {
+		// 	$sess = array(
+		// 		'nis' => $row->nis,
+		// 		'passwd' => $row->password
+		// 	);
+		// }
 
 		// bikin session
 		$this->session->set_userdata($user);
-		$this->_update_last_login($user->id);
-
-		return $this->session->set_userdata($user);
-
-
-		// $this->db->where('email', $username)->or_where('username', $username);
-		// $query = $this->db->get($this->_table);
-
-
-
+		redirect('admin');
 	}
 
 	public function current_user()

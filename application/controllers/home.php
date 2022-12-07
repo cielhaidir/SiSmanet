@@ -8,7 +8,6 @@ class Home extends CI_Controller {
 		$this->load->helper('url');
 	}
 	public function index() {
-		$this->load->library('session');
 		$data['bg'] = '';
 		$this->load->view('template/header', $data);
 		$this->load->view('home/index');

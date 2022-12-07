@@ -21,7 +21,7 @@
                     <a href="#" >
                         <h5 class="text-black">' . $br['judul'] . '</h5>
                     </a>
-                    <a href="berita/?id_berita='.$br['id_berita'].'" class="text-black">
+                    <a href="informasi/berita?id_berita='.$br['id_berita'].'" class="text-black">
 					Baca Selengkapnya
                     </a>
 					</div>';
