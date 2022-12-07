@@ -9,8 +9,19 @@ class informasi extends CI_Controller {
 	}
 	public function index() {
 		$data['bg'] = 'bg-smanet';
+		$this->load->model('berita_model');
+		$data['berita'] = $this->berita_model->getberita();
 		$this->load->view('template/header', $data);
-		$this->load->view('informasi');
+		$this->load->view('informasi', $data);
+	}
+	public function berita(){
+		$data['bg'] = 'bg-smanet';
+		// $data['id'] = $id;
+		$this->load->model('berita_model');
+		$data['berita'] = $this->berita_model->getidberita();
+		$this->load->view('template/header', $data);
+		$this->load->view('informasi/id_berita', $data);
+
 	}
 
 }

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,11 +10,11 @@
     <!-- <link href="assets/css/bootstrap.css" rel="stylesheet"> -->
 
     <!-- Latest compiled JavaScript -->
-    <script src="assets/js/bootstrap.bundle.js"></script>
+    <script src="<?=base_url();?>assets/js/bootstrap.bundle.js"></script>
 
     <!-- Custom CSS -->
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="<?=base_url();?>assets/css/style.css" rel="stylesheet">
+    <link href="<?=base_url();?>assets/css/styles.css" rel="stylesheet">
 
 </head>
 
@@ -23,7 +22,7 @@
     <!-- Menu -->
     <nav class="navbar navbar-expand-lg <?= $bg; ?> navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="assets/img/logo.png" alt="SMAN 7 WAJO"
+            <a class="navbar-brand" href="#page-top"><img src="<?=base_url();?>assets/img/logo.png" alt="SMAN 7 WAJO"
                     style="width: 250px; height: auto" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,9 +31,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="home">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="informasi">Informasi</a></li>
-                    <li class="nav-item"><a class="nav-link" href="eskul">Ekstrakurikuler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?=base_url();?>home">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?=base_url();?>informasi">Informasi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?=base_url();?>eskul">Ekstrakurikuler</a></li>
+					<li class="nav-item"><a class="nav-link" href="<?=base_url();?>tassmanet">Tassmanet</a></li>
                     <button type="button" class="btn btn-smanet text-white" data-bs-toggle="modal" data-bs-target="#myModal">
                         Login
                     </button>
@@ -51,20 +51,20 @@
 
                                 <!-- Modal body -->
                                 <div class="modal-body">
-                                    <form action="<?= site_url('/login');?>" method="post">
+                                    <form action="<?= site_url();?>home/login" method="post">
                                         <div class="d-flex justify-content-center">
-                                            <img src="assets\img\logos\Sman7.png"
+                                            <img src="<?= site_url()?>assets\img\logos\Sman7.png"
                                                 style="width: 200px; align-content: center;">
                                         </div>
                                         <br><br>
                                         <div class="form-group first">
                                             <label for="username">NIP/NIS</label>
-                                            <input type="text" class="form-control" id="username">
+                                            <input type="text" class="form-control" name="username">
 
                                         </div>
                                         <div class="form-group last mb-4">
                                             <label for="password">Password</label>
-                                            <input type="password" class="form-control" id="password">
+                                            <input type="password" class="form-control" name="password">
 
                                         </div>
 
@@ -76,8 +76,7 @@
                                             </label>
                                         </div>
 
-                                        <input type="submit" class="btn btn-secondary" href="#"></input>
-
+                                        <input type="submit" class="btn btn-secondary"></input>
                                 </div>
                                 </form>
                             </div>

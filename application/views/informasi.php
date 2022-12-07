@@ -11,78 +11,22 @@
         </div>
         <div class="row gy-5">
             <!---->
-             <div class="col-lg-4 col-md-6 text-bg-dark text-start"> 
+			<?php
+			foreach ($berita as $br){
+	            echo '<div class="col-lg-4 col-md-6 text-bg-dark text-start"> 
                 <div>
-                    <img class="img-fluid" src="assets/img/berita/batik2.jpeg" width="317" alt="SMANET">
-                </div>
-                    <p class="text-center">3 October 2022 | By Admin</p>
+						<img class="img-fluid" src="<?= base_url(); ?>assets/img/berita/batik2.jpeg" width="317" alt="SMANET">
+						</div>
+						<p class="text-center">3 October 2022 | By Admin</p>
                     <a href="#" >
-                        <h5 class="text-black">Pelaksanaan Hari batik dan Fashion Show Batik</h5>
+                        <h5 class="text-black">' . $br['judul'] . '</h5>
                     </a>
-                    <a href="#" class="text-black">
-                        Baca Selengkapnya
+                    <a href="berita/?id_berita='.$br['id_berita'].'" class="text-black">
+					Baca Selengkapnya
                     </a>
-            </div>
-            <div class="col-lg-4 col-md-6 text-bg-dark text-black text-start"> 
-                <div te>
-                    <img class="img-fluid" src="assets/img/berita/paskib.jpeg" alt="SMANET">
-                </div>
-                    <p class="text-center">3 October 2022 | By Admin</p>
-                    <a href="#" >
-                        <h5 class="text-black">SMA 7 Wajo Menjadi Tuan Rumah Parade Paskibra Kabupaten Wajo</h5>
-                    </a>
-                    <a href="#" class="text-black">
-                        Baca Selengkapnya
-                    </a>
-            </div>
-            <div class="col-lg-4 col-md-6 text-bg-dark text-start"> 
-                <div>
-                    <img class="img-fluid" src="assets/img/berita/gerbang.png" width="5000"  alt="SMANET">
-                </div>
-                    <p class="text-center   ">3 October 2022 | By Admin</p>
-                    <a href="#" class="text-black">
-                        <h5 class="text-black">Virus Corona Menyebar lagi, Sekolah Libur Seminggu !</h5>
-                    </a>
-                    <a href="#" class="text-black">
-                        Baca Selengkapnya
-                    </a>
-            </div>
-            <div class="col-lg-4 col-md-7 text-bg-dark text-start"> 
-                <div>
-                    <img class="img-fluid" src="assets/img/berita/upacara.jpg" width="390" height="100" alt="SMANET">
-                </div>
-                    <p class="text-center ">3 October 2022 | By Admin</p>
-                    <a href="#" class="text-black" >
-                        <h5 class="text-black">Upacara Memperingati Hari Sumpah Pemuda 28 Oktober 2022</h5>
-                    </a>
-                    <a href="#" class="text-black">
-                        Baca Selengkapnya
-                    </a>
-            </div>
-            <div class="col-lg-4 col-md-7 text-bg-dark text-start"> 
-                <div>
-                    <img class="img-fluid" src="assets/img/berita/km.jpg" width="390" height="100" alt="SMANET">
-                </div>
-                    <p class="text-center ">3 October 2022 | By Admin</p>
-                    <a href="#" >
-                        <h5 class="text-black">Mengapa Kurikulum Merdeka Lebih Penting di Luar Kota Besar?</h5>
-                    </a>
-                    <a href="#" class="text-black">
-                        Baca Selengkapnya
-                    </a>
-            </div>
-            <div class="col-lg-4 col-md-7 text-bg-dark text-start"> 
-                <div>
-                    <img class="img-fluid" src="assets/img/berita/pr.jpg" width="390" height="100" alt="SMANET">
-                </div>
-                    <p class="text-center ">3 October 2022 | By Admin</p>
-                    <a href="#" >
-                        <h5 class="text-black">Sejarah dan Penggagas Gerakan Pramuka</h5>
-                    </a>
-                    <a href="#" class="text-black">
-                        Baca Selengkapnya
-                    </a>
-            </div>
+					</div>';
+				}
+					?>
         </div>
     </div>
 </section>
@@ -110,67 +54,6 @@
                         Baca Selengkapnya
                     </a>
             </div>
-            <div class="col-lg-4 col-md-6 text-bg-dark text-white text-start"> 
-                <div te>
-                    <img class="img-fluid" src="assets/img/berita/paskib.jpeg" alt="SMANET">
-                </div>
-                    <p class="text-center text-white">3 October 2022 | By Admin</p>
-                    <a href="#" >
-                        <h5 class="text-white">SMA 7 Wajo Menjadi Tuan Rumah Parade Paskibra Kabupaten Wajo</h5>
-                    </a>
-                    <a href="#" class="text-white">
-                        Baca Selengkapnya
-                    </a>
-            </div>
-            <div class="col-lg-4 col-md-6 text-bg-dark text-start"> 
-                <div>
-                    <img class="img-fluid" src="assets/img/berita/gerbang.png" width="5000"  alt="SMANET">
-                </div>
-                    <p class="text-center text-white">3 October 2022 | By Admin</p>
-                    <a href="#" class="text-white">
-                        <h5 class="text-white">Virus Corona Menyebar lagi, Sekolah Libur Seminggu !</h5>
-                    </a>
-                    <a href="#" class="text-white">
-                        Baca Selengkapnya
-                    </a>
-            </div>
-            <div class="col-lg-4 col-md-7 text-bg-dark text-start"> 
-                <div>
-                    <img class="img-fluid" src="assets/img/berita/upacara.jpg" width="390" height="100" alt="SMANET">
-                </div>
-                    <p class="text-center text-white">3 October 2022 | By Admin</p>
-                    <a href="#" class="text-white" >
-                        <h5 class="text-white">Upacara Memperingati Hari Sumpah Pemuda 28 Oktober 2022</h5>
-                    </a>
-                    <a href="#" class="text-white">
-                        Baca Selengkapnya
-                    </a>
-            </div>
-            <div class="col-lg-4 col-md-7 text-bg-dark text-start"> 
-                <div>
-                    <img class="img-fluid" src="assets/img/berita/km.jpg" width="390" height="100" alt="SMANET">
-                </div>
-                    <p class="text-center text-white">3 October 2022 | By Admin</p>
-                    <a href="#" >
-                        <h5 class="text-white">Mengapa Kurikulum Merdeka Lebih Penting di Luar Kota Besar?</h5>
-                    </a>
-                    <a href="#" class="text-white">
-                        Baca Selengkapnya
-                    </a>
-            </div>
-            <div class="col-lg-4 col-md-7 text-bg-dark text-start"> 
-                <div>
-                    <img class="img-fluid" src="assets/img/berita/pr.jpg" width="390" height="100" alt="SMANET">
-                </div>
-                    <p class="text-center text-white">3 October 2022 | By Admin</p>
-                    <a href="#" >
-                        <h5 class="text-white">Sejarah dan Penggagas Gerakan Pramuka</h5>
-                    </a>
-                    <a href="#" class="text-white">
-                        Baca Selengkapnya
-                    </a>
-            </div>
-        </div>
     </div>
 </section>
 </body>
