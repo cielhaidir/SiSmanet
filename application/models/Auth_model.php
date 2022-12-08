@@ -40,7 +40,7 @@ class Auth_model extends CI_Model
 		// }
 
 		// bikin session
-		$this->session->set_userdata($user);
+		$this->session->get_userdata($user);
 		redirect('admin');
 	}
 

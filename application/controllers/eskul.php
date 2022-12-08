@@ -11,9 +11,7 @@ class eskul extends CI_Controller
 	}
 	public function index()
 	{
-		$data['bg'] = '';
-		$this->load->view('template/header', $data);
-		$this->load->view('home/index');
-		$this->load->view('template/footer');
+		$this->load->view('eskul');
+
 	}
 }

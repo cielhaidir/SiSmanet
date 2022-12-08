@@ -9,6 +9,7 @@
                     <form action="tassmanet/pilih" method="POST">
                         <div class="text-left">Tingkatan :</div>
                         <select class="form-select" id="tingkatan">
+                            <option>Pilih Angkatan</option>
                             <option value="12">Kelas 12</option>
                             <option value="11">Kelas 11</option>
                             <option value="10">Kelas 10</option>
@@ -22,6 +23,7 @@
                         </select><br>
                         <div class="text-left">Kelas :</div>
                         <select class="form-select" name="kelas" id="kelas">
+							<option>Pilih Kelas</option>
                         </select><br>
                         <input type="submit" class="btn btn-secondary">
                     </form>
