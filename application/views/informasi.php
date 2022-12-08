@@ -10,8 +10,6 @@
             </div>
         </div>
         <div class="row gy-5">
-            <!---->
-            ANJAY MABAR
 			<?php
 			foreach ($berita as $br){
 	            echo '<div class="col-lg-4 col-md-6 text-bg-dark text-start"> 
