@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="row gy-5">
-            <!---->
+            <!--hello ges-->
 			<?php
 			foreach ($berita as $br){
 	            echo '<div class="col-lg-4 col-md-6 text-bg-dark text-start"> 
