@@ -24,4 +24,20 @@ class tassmanet extends CI_Controller
 		$this->load->view('template/header', $data);
 		$this->load->view('tassmanet2', $data);
 	}
+	public function lapor()
+	{
+		$this->load->model('siswa_model');
+		$pelanggaran = $this->siswa_model->insertLaporan();
+		$nohp = $this->siswa_model->getnohp();
+		// var_dump($pelanggaran);
+		// var_dump($nohp);
+		// die;
+		// redirect('api?tujuan='.$nohp.'&pesan='.$pelanggaran.'');
+		header('Location: http://localhost:3000/Sismanet/api?tujuan='.urlencode($nohp['0']['nohp_ortu']).'&pesan='.urlencode($pelanggaran));
+		// header('Location: http://localhost:3000/Sismanet/api?' . http_build_query(array(
+		// 	'tujuan=' => $nohp,
+		// 	'&pesan=' => $pelanggaran
+		// )));
+	
+	}
 }

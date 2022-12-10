@@ -16,7 +16,8 @@
                             <br>
 
                             <textarea id="ckeditor" name="berita" class="form-control" placeholder="Isi berita" required></textarea><br/>
-                            <input type="file" name="filefoto"><br>
+                           
+							<input type="file" name="foto" accept="image/*"><br>
 
                             <br>
 

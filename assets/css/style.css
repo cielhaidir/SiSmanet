@@ -1,6 +1,9 @@
 :root {
 --bs-smanet: 15, 105, 113; 
 }
+.d-none{
+	display: none;
+}
 .bg-smanet {
     --bs-bg-opacity: 1;
     background-color: RGB(var(--bs-smanet), var(--bs-bg-opacity)) !important;

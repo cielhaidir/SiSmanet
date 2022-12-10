@@ -2,8 +2,11 @@
 
 class berita_model extends CI_Model {
 
-	public function getberita(){
+	function __construct(){
 		$this->load->database();
+
+	}
+	public function getberita(){
 	
 		$sql = "SELECT * FROM berita";
 		
@@ -15,17 +18,25 @@ class berita_model extends CI_Model {
 		return $data;
 	}
 	public function tambahberita(){
-		$this->load->database();
+		$judul = $this->input->post('Judul');
+		$berita = $this->input->post('berita');
+		$nama_gambar = $_FILES['foto']['name'];
 		
-		$judul = $_POST['Judul'];
-		$berita = $_POST['berita'];
-		// $author = $_POST['id_author'];
-		$sql = "INSERT INTO berita (id_berita,judul,isi_berita) VALUES ('','$judul', '$berita')";
+		//s: upload file
+		$this->load->helper('form');
+		$config['upload_path']          = './assets/img/berita';
+		$config['allowed_types']        = 'gif|jpg|png';
 
+		$this->load->library('upload', $config);
+
+		$this->upload->do_upload('foto');
+		//e: upload file
+
+		// $author = $_POST['id_author'];
+		$sql = "INSERT INTO berita (id_berita,judul,isi_berita,foto) VALUES ('','$judul', '$berita', '$nama_gambar')";
 		$this->db->query($sql);
 	}
 	public function getidberita(){
-		$this->load->database();
 
 		$idberita = $this->input->get('id_berita');
 		$sql = "SELECT * FROM berita where id_berita=$idberita";
@@ -34,21 +45,49 @@ class berita_model extends CI_Model {
 		return $data;
 	}
 	public function editberita(){
-		$this->load->database();
 
-		$idberita = $_POST['id_berita'];
-		$judul = $_POST['Judul'];
-		$berita = $_POST['berita'];
-		$sql = "UPDATE berita
-		SET
-			judul='$judul',
-			isi_berita='$berita'
-		WHERE
-		id_berita='$idberita'";
-		$this->db->query($sql);
+		$idberita = $this->input->post('id_berita');
+		$judul = $this->input->post('Judul');
+		$foto_lama = $this->input->post('foto_lama');
+		$berita = $this->input->post('berita');
+		$foto = $_FILES['foto']['name'];
+
+		if($foto){
+			//ada foto baru
+			//s: upload file
+			$this->load->helper('form');
+			$config['upload_path']          = './assets/img/berita';
+			$config['allowed_types']        = 'gif|jpg|png';
+
+			$this->load->library('upload', $config);
+
+			$this->upload->do_upload('foto');
+
+			unlink('./assets/img/berita/'. $foto_lama);
+			//e: upload file
+
+			$sql = "UPDATE berita
+			SET
+				judul='$judul',
+				isi_berita='$berita',
+				foto = '$foto'
+			WHERE
+			id_berita='$idberita'";
+			$this->db->query($sql);
+		}else{
+			//tidak ada foto baru
+			$sql = "UPDATE berita
+			SET
+				judul='$judul',
+				isi_berita='$berita'
+			WHERE
+			id_berita='$idberita'";
+			$this->db->query($sql);
+		}
+
+
 	}
 	public function hapusberita(){
-		$this->load->database();
 
 		$idberita = $this->input->get('id_berita');
 		$sql = "DELETE FROM berita where id_berita='$idberita'";

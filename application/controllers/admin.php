@@ -9,10 +9,10 @@ class admin extends CI_Controller
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->library('session');
-		// $this->load->model('Auth_model');
-		// // if(!$this->Auth_model->current_user()){
-		// // 	redirect('home');
-		// // }
+
+		if(empty($this->session->userdata['data_user'])){
+			redirect('/login');
+		}
 	}
 	public function index()
 	{
