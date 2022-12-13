@@ -9,6 +9,8 @@ class Home extends CI_Controller {
 		$this->load->library('session');
 	}
 	public function index() {
+		echo 'halo';
+		die;
 		$data['bg'] = '';
 		$this->load->view('template/header', $data);
 		$this->load->view('home/index');
