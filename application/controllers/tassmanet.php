@@ -29,15 +29,13 @@ class tassmanet extends CI_Controller
 		$this->load->model('siswa_model');
 		$pelanggaran = $this->siswa_model->insertLaporan();
 		$nohp = $this->siswa_model->getnohp();
-		// var_dump($pelanggaran);
-		// var_dump($nohp);
+		$hp1 = $nohp['0']['nohp_ortu'];
+		$password = 'lbwyBzfgzUIvXZFShJuikaWvLJhIVq36';
+		$hp = $this->load->encrypt($hp1, $password);
+		$pln = $this->load->encrypt($pelanggaran, $password);
+		// var_dump($hp);
 		// die;
-		// redirect('api?tujuan='.$nohp.'&pesan='.$pelanggaran.'');
-		header('Location: http://localhost:3000/Sismanet/api?tujuan='.urlencode($nohp['0']['nohp_ortu']).'&pesan='.urlencode($pelanggaran));
-		// header('Location: http://localhost:3000/Sismanet/api?' . http_build_query(array(
-		// 	'tujuan=' => $nohp,
-		// 	'&pesan=' => $pelanggaran
-		// )));
-	
+		header('Location: http://localhost:3000/Sismanet/api?tujuan='.urlencode($hp).'&pesan='.urlencode($pln));
+		// header('Location: http://localhost:3000/Sismanet/api?tujuan='.urlencode($nohp['0']['nohp_ortu']).'&pesan='.urlencode($pelanggaran));
 	}
 }
