@@ -16,11 +16,11 @@ class Auth_model extends CI_Model
 		$length = strlen($uname);
 
 		if ($length > 8) {
-			$sql = "SELECT * FROM guru where nip='$uname' and password='$passwd'";
+			$sql = "SELECT nip,nama_guru FROM guru where nip='$uname' and password='$passwd'";
 			$hasil = $this->db->query($sql);
 
 		} else {
-			$sql = "SELECT * FROM siswa where nis='$uname' and password='$passwd'";
+			$sql = "SELECT nis,nama_siswa,angkatan,kelas,agama,alamat FROM siswa where nis='$uname' and password='$passwd'";
 			$hasil = $this->db->query($sql);
 		}
 

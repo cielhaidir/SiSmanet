@@ -3,7 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller
 {
-
 	function __construct()
 	{
 		parent::__construct();
@@ -17,10 +16,9 @@ class Login extends CI_Controller
 		if(!empty($this->session->userdata['data_user'])){
 			redirect('admin');
 		}
-		$this->load->view('login');
-
+		// $this->load->view('admin');
 	}
-	public function login_aksi(){
+	public function aksi_login(){
 		$this->load->model('Auth_model');
 		$login = $this->Auth_model->cek_login();
 
@@ -28,13 +26,12 @@ class Login extends CI_Controller
 			echo 'Login gagal <a href="'.base_url().'login">ulangi</a>';
 		}else{
 			$this->session->set_userdata('data_user', $login );
-			redirect('/admin');
+			redirect('/home');
 		}
-
 	}
 	public function logout(){
 		$this->session->unset_userdata('data_user');
 		$this->session->sess_destroy();
-		redirect('/login');
+		redirect('/home');
 	}
 }
