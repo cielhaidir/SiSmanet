@@ -11,7 +11,7 @@ class admin extends CI_Controller
 		$this->load->library('session');
 
 		if(empty($this->session->userdata['data_user'])){
-			redirect('/login');
+			redirect('/home');
 		}
 	}
 	public function index()
