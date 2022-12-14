@@ -9,6 +9,47 @@ class Auth_model extends CI_Model
 		$this->load->database();
 	}
 
+	public function cek_login(){
+
+		$uname = $this->input->post('username');
+		$passwd = $this->input->post('password');
+		$length = strlen($uname);
+
+		if ($length > 8) {
+			$sql = "SELECT nip,nama_guru FROM guru where nip='$uname' and password='$passwd'";
+			$hasil = $this->db->query($sql);
+
+		} else {
+			$sql = "SELECT nis,nama_siswa,angkatan,kelas,agama,alamat FROM siswa where nis='$uname' and password='$passwd'";
+			$hasil = $this->db->query($sql);
+		}
+
+		if($hasil->num_rows() == 1){
+			// successfully
+			$data = $hasil->result_array();
+
+		}else{
+			//failed
+			$data = 'Gagal';
+		}
+		return $data;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	private $_table = "user";
 	const SESSION_KEY = 'user_id';
 

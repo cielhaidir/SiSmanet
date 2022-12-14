@@ -114,7 +114,9 @@
 						<!-- Nav Item - User Information -->
 						<li class="nav-item dropdown no-arrow">
 							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<span class="mr-2 d-none d-lg-inline text-black small">Admin</span>
+								<span class="mr-2 d-none d-lg-inline text-black small">
+									<!-- <= $this->session->userdata['data_user']['0']['nama_siswa'];> -->
+								</span>
 								<img class="img-profile rounded-circle" src="<?=base_url();?>assets/img/admin/adm1.jpg">
 							</a>
 							<!-- Dropdown - User Information -->
@@ -155,7 +157,7 @@
 					<div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
 					<div class="modal-footer">
 						<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-						<a class="btn btn-smanet" href="<?= base_url(); ?>home">Logout</a>
+						<a class="btn btn-smanet" href="<?= base_url(); ?>Login/logout">Logout</a>
 					</div>
 				</div>
 			</div>

@@ -10,12 +10,11 @@
             </div>
         </div>
         <div class="row gy-5">
-            <!--hello ges-->
 			<?php
 			foreach ($berita as $br){
 	            echo '<div class="col-lg-4 col-md-6 text-bg-dark text-start"> 
                 <div>
-						<img class="img-fluid" src="<?= base_url(); ?>assets/img/berita/batik2.jpeg" width="317" alt="SMANET">
+						<img class="img-fluid" loading="lazy" src="'.base_url().'assets/img/berita/' . $br['foto'] . '" width="317" alt="SMANET">
 						</div>
 						<p class="text-center">3 October 2022 | By Admin</p>
                     <a href="#" >
@@ -44,7 +43,7 @@
             <!---->
              <div class="col-lg-4 col-md-6 text-bg-dark text-start"> 
                 <div>
-                    <img class="img-fluid" src="assets/img/berita/batik2.jpeg" width="317" alt="SMANET">
+                    <img class="img-fluid" loading="lazy" src="assets/img/berita/batik2.jpeg" width="317" alt="SMANET">
                 </div>
                     <p class="text-center text-white">3 October 2022 | By Admin</p>
                     <a href="#" >
