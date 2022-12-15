@@ -3,7 +3,7 @@
 class berita_model extends CI_Model {
 
 	public function getberita(){
-		$this->load->database();
+		$this->load->tassmanet();
 	
 		$sql = "SELECT * FROM berita";
 		
@@ -15,7 +15,7 @@ class berita_model extends CI_Model {
 		return $data;
 	}
 	public function tambahberita(){
-		$this->load->database();
+		$this->load->tassmanet();
 		
 		$judul = $_POST['Judul'];
 		$berita = $_POST['berita'];
@@ -25,7 +25,7 @@ class berita_model extends CI_Model {
 		$this->db->query($sql);
 	}
 	public function getidberita(){
-		$this->load->database();
+		$this->load->tassmanet();
 
 		$idberita = $this->input->get('id_berita');
 		$sql = "SELECT * FROM berita where id_berita=$idberita";
@@ -34,7 +34,7 @@ class berita_model extends CI_Model {
 		return $data;
 	}
 	public function editberita(){
-		$this->load->database();
+		$this->load->tassmanet();
 
 		$idberita = $_POST['id_berita'];
 		$judul = $_POST['Judul'];
@@ -48,7 +48,7 @@ class berita_model extends CI_Model {
 		$this->db->query($sql);
 	}
 	public function hapusberita(){
-		$this->load->database();
+		$this->load->tassmanet();
 
 		$idberita = $this->input->get('id_berita');
 		$sql = "DELETE FROM berita where id_berita='$idberita'";
