@@ -23,4 +23,15 @@ class informasi extends CI_Controller {
 		$this->load->view('informasi/id_berita', $data);
 
 	}
+	public function agenda(){
+		$data['bg'] = 'bg-smanet';
+		// $data['id'] = $id;
+		$this->load->model('agenda_model');
+		$data['agenda'] = $this->agenda_model->getidagenda();
+		$this->load->view('template/header', $data);
+		$this->load->view('informasi/id_agenda', $data);
+
+	}
+
+
 }
