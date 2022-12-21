@@ -7,6 +7,7 @@ class berita_model extends CI_Model {
 
 	}
 	public function getberita(){
+
 	
 		$sql = "SELECT * FROM berita";
 		
@@ -45,6 +46,7 @@ class berita_model extends CI_Model {
 		return $data;
 	}
 	public function editberita(){
+
 
 		$idberita = $this->input->post('id_berita');
 		$judul = $this->input->post('Judul');
@@ -88,10 +90,6 @@ class berita_model extends CI_Model {
 
 	}
 	public function hapusberita(){
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 		$idberita = $this->input->get('id_berita');
 		$sql = "DELETE FROM berita where id_berita='$idberita'";
 		$this->db->query($sql);
