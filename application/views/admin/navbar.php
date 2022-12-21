@@ -25,7 +25,7 @@
 	<div id="wrapper">
 
 		<!-- Sidebar -->
-		<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+		<ul class="navbar-nav sidebar sidebar-dark accordion" style="color: var(--bs-card-border-color);background: rgb(15, 105, 113);border-color: var(--bs-card-border-color);" id="accordionSidebar">
 
 			<!-- Sidebar - Brand -->
 			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -42,6 +42,10 @@
 
 			<!-- Nav Item - Pages Collapse Menu -->
 			<li class="nav-item">
+				<a class="nav-link" href="home">
+					<i class="fas fa-fw fa-cog"></i>
+					<span>Kembali</span>
+				</a>
 				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
 					<i class="fas fa-fw fa-cog"></i>
 					<span>Informasi</span>
@@ -115,7 +119,7 @@
 						<li class="nav-item dropdown no-arrow">
 							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span class="mr-2 d-none d-lg-inline text-black small">
-									<!-- <= $this->session->userdata['data_user']['0']['nama_siswa'];> -->
+									<?= $this->session->userdata['data_user']['0']['nama_guru'];?>
 								</span>
 								<img class="img-profile rounded-circle" src="<?=base_url();?>assets/img/admin/adm1.jpg">
 							</a>

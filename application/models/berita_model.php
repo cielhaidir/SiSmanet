@@ -90,10 +90,14 @@ class berita_model extends CI_Model {
 
 	}
 	public function hapusberita(){
-
-
 		$idberita = $this->input->get('id_berita');
 		$sql = "DELETE FROM berita where id_berita='$idberita'";
 		$this->db->query($sql);
+	}
+	public function hitungberita(){
+		$sql = "SELECT Count(id_berita) as jumlah from berita";
+		$hasil = $this->db->query($sql);
+		$data = $hasil->result_array();
+		return $data;
 	}
 }
