@@ -1,6 +1,9 @@
 :root {
 --bs-smanet: 15, 105, 113; 
 }
+section h1 {
+	margin-top: 60px
+}
 .d-none{
 	display: none;
 }

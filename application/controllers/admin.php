@@ -16,8 +16,12 @@ class admin extends CI_Controller
 	}
 	public function index()
 	{
+		$this->load->model('berita_model');
+		$this->load->model('siswa_model');
+		$data['berita'] = $this->berita_model->hitungberita();
+		$data['pelanggaran'] = $this->siswa_model->hitungpelanggaran();
 		$this->load->view('admin/navbar');
-		$this->load->view('admin/admin');
+		$this->load->view('admin/admin',$data);
 		$this->load->view('admin/footer');
 	}
 	public function agenda()

@@ -11,6 +11,8 @@ class eskul extends CI_Controller
 	}
 	public function index()
 	{
+		$data['bg'] = 'bg-smanet';
+		$this->load->view('template/header', $data);
 		$this->load->view('eskul');
 
 	}

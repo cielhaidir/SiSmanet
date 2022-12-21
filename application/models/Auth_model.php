@@ -20,7 +20,7 @@ class Auth_model extends CI_Model
 			$hasil = $this->db->query($sql);
 
 		} else {
-			$sql = "SELECT nis,nama_siswa,angkatan,kelas,agama,alamat FROM siswa where nis='$uname' and password='$passwd'";
+			$sql = "SELECT nis,nama_siswa,angkatan,kelas,agama,alamat,foto FROM siswa where nis='$uname' and password='$passwd'";
 			$hasil = $this->db->query($sql);
 		}
 

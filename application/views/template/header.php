@@ -15,6 +15,7 @@
 	<!-- Custom CSS -->
 	<link href="<?= base_url(); ?>assets/css/style.css" rel="stylesheet">
 	<link href="<?= base_url(); ?>assets/css/styles.css" rel="stylesheet">
+	<link href="<?= base_url(); ?>assets/css/top.css" rel="stylesheet">
 
 </head>
 
@@ -34,7 +35,7 @@
 					<li class="nav-item"><a class="nav-link" href="<?= base_url(); ?>eskul">Ekstrakurikuler</a></li>
 					<?php
 					if (!empty($this->session->userdata['data_user']['0']['nip'])) {
-						echo '<li class="nav-item"><a class="nav-link" href="<?=base_url();?>tassmanet">Tassmanet</a></li>';
+						echo '<li class="nav-item"><a class="nav-link" href="'. base_url().'tassmanet">Tassmanet</a></li>';
 					}
 
                     if (!empty($this->session->userdata['data_user']['0']['nip'])) {
