@@ -55,7 +55,7 @@
                     </a>
                     </div>';
                 }
-                    ?>
+            ?>
         </div>
 </section>
 </body>

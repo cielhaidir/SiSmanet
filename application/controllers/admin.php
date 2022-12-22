@@ -58,7 +58,7 @@ class admin extends CI_Controller
 	public function hapus_agenda()
 	{
 		$this->load->model('agenda_model');
-		$this->berita_model->hapusagenda();
+		$this->agenda_model->hapusagenda();
 		redirect('admin/agenda');
 	}
 	public function berita()

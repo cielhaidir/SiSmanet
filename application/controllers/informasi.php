@@ -11,6 +11,8 @@ class informasi extends CI_Controller {
 		$data['bg'] = 'bg-smanet';
 		$this->load->model('berita_model');
 		$data['berita'] = $this->berita_model->getberita();
+	    $this->load->model('agenda_model');
+		$data['agenda'] = $this->agenda_model->getagenda();
 		$this->load->view('template/header', $data);
 		$this->load->view('informasi', $data);
 	}
