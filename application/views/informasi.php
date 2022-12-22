@@ -41,16 +41,16 @@
         </div>
         <div class="row gy-5">
            <?php
-            foreach ($berita as $br){
+            foreach ($agenda as $ag){
                 echo '<div class="col-lg-4 col-md-6 text-bg-dark text-start"> 
                 <div>
-                        <img class="img-fluid" loading="lazy" src="'.base_url().'assets/img/berita/' . $br['foto'] . '" width="317" alt="SMANET">
+                        <img class="img-fluid" loading="lazy" src="'.base_url().'assets/img/agenda/' . $ag['foto'] . '" width="317" alt="SMANET">
                         </div>
                         <p class="text-center">3 October 2022 | By Admin</p>
                     <a href="#" >
-                        <h5 class="text-black">' . $br['judul'] . '</h5>
+                        <h5 class="text-black">' . $ag['judul'] . '</h5>
                     </a>
-                    <a href="informasi/berita?id_berita='.$br['id_berita'].'" class="text-black">
+                    <a href="informasi/agenda?id_agenda='.$ag['id_agenda'].'" class="text-black">
                     Baca Selengkapnya
                     </a>
                     </div>';
