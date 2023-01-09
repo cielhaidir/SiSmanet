@@ -131,48 +131,23 @@
                 </div>
             </a>
         </div>
-    </div>
-
-        <!-- 3 Eskul Terakhir -->
-    <div class="container-cc">
-        <div class="card">
-            <a href="#osis">
-                <img src="assets/img/logos/osis.png" alt="">
+		<div class="card">
+            <a href="#technosis">
+                <img src="assets/img/logos/technosis.png" alt="">
                 <div class="img-title">
-                    <h3>Osis</h3>
-                    <p>Organisasi Siswa Intra Sekolah</p>
+                    <h3>Technosis</h3>
+                    <p>Organisasi Siswa Pencinta Teknologi</p>
                 </div>
-                <div class="overlay" id="osis">
-                    <img src="assets/img/logos/Osis.png" alt="">
-                </div>
-            </a>
-        </div>
-        <div class="card">
-            <a href="#pramuka">
-                <img src="assets/img/logos/pramuka.png" alt="">
-                <div class="img-title">
-                    <h3>Pramuka</h3>
-                    <p>Praja Muda Karana</p>
-                </div>
-                <div class="overlay" id="pramuka">
-                    <img src="assets/img/logos/pramuka.png" alt="">
-                </div>
-            </a>
-        </div>
-        <div class="card">
-            <a href="#pmr">
-                <img src="assets/img/logos/pmr.png" alt="">
-                <div class="img-title">
-                    <h3>PMR</h3>
-                    <p>Palang Merah Remaja</p>
-                </div>
-
-                <div class="overlay" id="pmr">
-                    <img src="assets/img/logos/pmr.png" alt="">
+                <div class="overlay" id="technosis">
+                    <img src="assets/img/logos/technosis.png" alt="">
                 </div>
             </a>
         </div>
     </div>
+    </div>
+    <div class="container-cc d-flex justify-content-center" style="margin-right: 9%;">
+	
+
     </section>
     <script src="assets/js/ciput.js"></script>    
 </body>

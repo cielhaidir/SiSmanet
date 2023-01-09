@@ -15,8 +15,13 @@ class siswa_model extends CI_Model
 		$kelas = $this->input->post('kelas');
 		$tingkatan = $this->input->post('tingkatan');
 		$date = getdate();
-		$datenow = $date['year'] . '-' . $date['mon'] . '-' . $date['mday'];
+		// $datenow = $date['year'] . '-' . $date['mon'] . '-' . $date['mday'];
+		$datenow = 2023 . '-' . 5 . '-' . $date['mday'];
+		echo $datenow;
 		$akt = date('Y', strtotime('-'.$tingkatan.' year', strtotime($datenow)) );
+		// $akt = date('Y', strtotime('-'.$tingkatan.' year-06 month', strtotime($datenow)) );
+		echo $akt;
+
 		
 
 		$sql = "SELECT * FROM siswa where kelas='$kelas' AND angkatan=$akt";
@@ -49,17 +54,27 @@ class siswa_model extends CI_Model
 		$input1 = $this->input->post('input1');
 
 		if ($pelanggaran == 1) {
-			$sql = "INSERT INTO pelanggaran (id_pelanggaran, nis, nip_guru, JenisPelanggaran) VALUES (NULL, '$nis', '123', '$input1' );";
+			$sql = "INSERT INTO pelanggaran (id_pelanggaran, nis, nip_guru, JenisPelanggaran, date) VALUES (NULL, '$nis', '123', '$input1', now() );";
 			$this->db->query($sql);
 			return $input1;
 		} else {
-			$sql = "INSERT INTO pelanggaran (id_pelanggaran, nis, nip_guru, JenisPelanggaran) VALUES (NULL, '$nis', '123', '$pelanggaran');";
+			$sql = "INSERT INTO pelanggaran (id_pelanggaran, nis, nip_guru, JenisPelanggaran, date) VALUES (NULL, '$nis', '123', '$pelanggaran', now());";
 			$this->db->query($sql);
 			return $pelanggaran;
 		}
 	}
 	public function hitungpelanggaran(){
 		$sql = "SELECT Count(id_pelanggaran) as jumlah from pelanggaran";
+		$hasil = $this->db->query($sql);
+		$data = $hasil->result_array();
+		return $data;
+	}
+
+	public function getpelanggaran(){
+		$sql = "SELECT pelanggaran.id_pelanggaran, pelanggaran.nis, siswa.nama_siswa, pelanggaran.JenisPelanggaran as pelanggaran, pelanggaran.date
+		FROM pelanggaran
+		INNER JOIN siswa
+		ON pelanggaran.nis = siswa.nis";
 		$hasil = $this->db->query($sql);
 		$data = $hasil->result_array();
 		return $data;

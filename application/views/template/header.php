@@ -17,6 +17,7 @@
 	<link href="<?= base_url(); ?>assets/css/styles.css" rel="stylesheet">
 	<link href="<?= base_url(); ?>assets/css/top.css" rel="stylesheet">
 
+
 </head>
 
 <body>
@@ -135,4 +136,4 @@
 			</ul>
 		</div>
 		</div>
-	</nav>
+	</nav> 	

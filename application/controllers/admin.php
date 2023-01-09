@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class admin extends CI_Controller
+class Admin extends CI_Controller
 {
 
 	function __construct()
@@ -16,25 +16,37 @@ class admin extends CI_Controller
 	}
 	public function index()
 	{
+		$data['bg1'] = 'active';
+		$data['bg2'] = '';
+		$data['bg3'] = '';
+		$data['bg4'] = '';
 		$this->load->model('berita_model');
 		$this->load->model('siswa_model');
 		$data['berita'] = $this->berita_model->hitungberita();
 		$data['pelanggaran'] = $this->siswa_model->hitungpelanggaran();
-		$this->load->view('admin/navbar');
+		$this->load->view('admin/navbar', $data);
 		$this->load->view('admin/admin',$data);
 		$this->load->view('admin/footer');
 	}
 	public function agenda()
 	{
+		$data['bg2'] = 'active';
+		$data['bg1'] = '';
+		$data['bg3'] = '';
+		$data['bg4'] = '';
 		$this->load->model('agenda_model');
 		$data['agenda'] = $this->agenda_model->getagenda();
-		$this->load->view('admin/navbar');
-		$this->load->view('informasi/agenda', $data);	
+		$this->load->view('admin/navbar', $data);
+		$this->load->view('informasi/agenda');	
 		$this->load->view('admin/footer');
 	}
 	public function tambah_agenda()
 	{
-		$this->load->view('admin/navbar');
+		$data['bg2'] = 'active';
+		$data['bg1'] = '';
+		$data['bg3'] = '';
+		$data['bg4'] = '';
+		$this->load->view('admin/navbar', $data);
 		$this->load->view('informasi/agenda_tambah');	
 		$this->load->view('admin/footer');
 	}
@@ -48,8 +60,8 @@ class admin extends CI_Controller
 	{
 		$this->load->model('agenda_model');
 		$data['agenda'] = $this->agenda_model->getidagenda();
-		$this->load->view('admin/navbar');
-		$this->load->view('informasi/agenda_edit', $data);
+		$this->load->view('admin/navbar', $data);
+		$this->load->view('informasi/agenda_edit');
 		$this->load->view('admin/footer');
 	}
 	public function ngedit_agenda()
@@ -67,16 +79,24 @@ class admin extends CI_Controller
 	}
 	public function berita()
 	{
+		$data['bg3'] = 'active';
+		$data['bg2'] = '';
+		$data['bg4'] = '';
+		$data['bg1'] = '';
 		$this->load->model('berita_model');
 		$data['berita'] = $this->berita_model->getberita();
-		$this->load->view('admin/navbar');
-		$this->load->view('informasi/berita', $data);	
+		$this->load->view('admin/navbar', $data);
+		$this->load->view('informasi/berita');	
 		$this->load->view('admin/footer');
 		
 	}
 	public function tambah_berita()
 	{
-		$this->load->view('admin/navbar');
+		$data['bg3'] = 'active';
+		$data['bg2'] = '';
+		$data['bg4'] = '';
+		$data['bg1'] = '';
+		$this->load->view('admin/navbar', $data);
 		$this->load->view('informasi/berita_tambah');	
 		$this->load->view('admin/footer');
 	}
@@ -88,9 +108,13 @@ class admin extends CI_Controller
 	}
 	public function edit_berita()
 	{
+		$data['bg3'] = 'active';
+		$data['bg2'] = '';
+		$data['bg4'] = '';
+		$data['bg1'] = '';
 		$this->load->model('berita_model');
 		$data['berita'] = $this->berita_model->getidberita();
-		$this->load->view('admin/navbar');
+		$this->load->view('admin/navbar', $data);
 		$this->load->view('informasi/berita_edit', $data);
 		$this->load->view('admin/footer');
 		
@@ -107,5 +131,18 @@ class admin extends CI_Controller
 		$this->load->model('berita_model');
 		$this->berita_model->hapusberita();
 		redirect('admin/berita');
+	}
+	public function pelanggaran()
+	{
+		$this->load->model('siswa_model');
+		$data['pelanggaran'] = $this->siswa_model->getpelanggaran();
+		$data['bg4'] = 'active';
+		$data['bg3'] = '';
+		$data['bg2'] = '';
+		$data['bg1'] = '';
+		$this->load->view('admin/navbar', $data);
+		$this->load->view('admin/pelanggaran', $data);	
+		$this->load->view('admin/footer');
+		
 	}
 }

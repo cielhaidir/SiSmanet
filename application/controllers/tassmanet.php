@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class tassmanet extends CI_Controller
+class Tassmanet extends CI_Controller
 {
 
 	function __construct()
@@ -20,7 +20,6 @@ class tassmanet extends CI_Controller
 	}
 	public function pilih()
 	{
-		
 		$this->load->model('siswa_model');
 		$data['siswa'] = $this->siswa_model->getdatasiswa();
 		$data['bg'] = 'bg-smanet';

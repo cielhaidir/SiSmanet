@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class eskul extends CI_Controller
+class Eskul extends CI_Controller
 {
 
 	function __construct()
@@ -14,6 +14,10 @@ class eskul extends CI_Controller
 		$data['bg'] = 'bg-smanet';
 		$this->load->view('template/header', $data);
 		$this->load->view('eskul');
+
+	}
+	public function id()
+	{
 
 	}
 }
