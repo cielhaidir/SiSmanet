@@ -38,7 +38,7 @@ class Tassmanet extends CI_Controller
 		$pln = $this->load->encrypt($pelanggaran, $password);
 		// var_dump($hp);
 		// die;
-		header('Location: http://localhost:3000/Sismanet/api?tujuan='.urlencode($hp).'&nama='.urldecode($nama).'&pesan='.urlencode($pln));
+		header('Location: http://165.22.99.135:3000/Sismanet/api?tujuan='.urlencode($hp).'&nama='.urldecode($nama).'&pesan='.urlencode($pln));
 		// header('Location: http://localhost:3000/Sismanet/api?tujuan='.urlencode($nohp['0']['nohp_ortu']).'&pesan='.urlencode($pelanggaran));
 	}
 }

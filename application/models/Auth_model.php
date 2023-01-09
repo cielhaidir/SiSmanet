@@ -15,7 +15,7 @@ class Auth_model extends CI_Model
 		$passwd = $this->input->post('password');
 		$length = strlen($uname);
 
-		if ($length > 8) {
+		if ($length > 10) {
 			$sql = "SELECT nip,nama_guru,foto FROM guru where nip='$uname' and password='$passwd'";
 			$hasil = $this->db->query($sql);
 
