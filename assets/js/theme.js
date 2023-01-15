@@ -4,6 +4,14 @@
   var sidebar = document.querySelector('.sidebar');
   var sidebarToggles = document.querySelectorAll('#sidebarToggle, #sidebarToggleTop');
   
+  var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+
+      if (vw < 768) {
+        for (var bsCollapse of sidebarCollapseList) {
+          bsCollapse.hide();
+        }
+      };
+      
   if (sidebar) {
     
     var collapseEl = sidebar.querySelector('.collapse');
