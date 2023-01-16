@@ -13,11 +13,17 @@ class Eskul extends CI_Controller
 	{
 		$data['bg'] = 'bg-smanet';
 		$this->load->view('template/header', $data);
-		$this->load->view('eskul');
+		$this->load->view('eskul', $data);
 
 	}
-	public function id()
-	{
+	public function id($id = ''){
+		$data['bg'] = 'bg-smanet';
+		// $data['id'] = $id;
+		$this->load->model('eskul_model');
+		$data['eskul'] = $this->eskul_model->getideskul($id);
+		$this->load->view('template/header', $data);
+		$this->load->view('ekstrakulikuler/id_eskul', $data);
 
 	}
+	
 }

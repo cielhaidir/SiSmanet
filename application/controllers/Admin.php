@@ -3,13 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Controller
 {
-
 	function __construct()
 	{
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->library('session');
-
 		if(empty($this->session->userdata['data_user'])){
 			redirect('/home');
 		}
@@ -20,6 +18,7 @@ class Admin extends CI_Controller
 		$data['bg2'] = '';
 		$data['bg3'] = '';
 		$data['bg4'] = '';
+		$data['bg5'] = '';
 		$this->load->model('berita_model');
 		$this->load->model('siswa_model');
 		$data['berita'] = $this->berita_model->hitungberita();
@@ -34,6 +33,7 @@ class Admin extends CI_Controller
 		$data['bg1'] = '';
 		$data['bg3'] = '';
 		$data['bg4'] = '';
+		$data['bg5'] = '';
 		$this->load->model('agenda_model');
 		$data['agenda'] = $this->agenda_model->getagenda();
 		$this->load->view('admin/navbar', $data);
@@ -46,6 +46,7 @@ class Admin extends CI_Controller
 		$data['bg1'] = '';
 		$data['bg3'] = '';
 		$data['bg4'] = '';
+		$data['bg5'] = '';
 		$this->load->view('admin/navbar', $data);
 		$this->load->view('informasi/agenda_tambah');	
 		$this->load->view('admin/footer');
@@ -83,6 +84,7 @@ class Admin extends CI_Controller
 		$data['bg2'] = '';
 		$data['bg4'] = '';
 		$data['bg1'] = '';
+		$data['bg5'] = '';
 		$this->load->model('berita_model');
 		$data['berita'] = $this->berita_model->getberita();
 		$this->load->view('admin/navbar', $data);
@@ -96,6 +98,7 @@ class Admin extends CI_Controller
 		$data['bg2'] = '';
 		$data['bg4'] = '';
 		$data['bg1'] = '';
+		$data['bg5'] = '';
 		$this->load->view('admin/navbar', $data);
 		$this->load->view('informasi/berita_tambah');	
 		$this->load->view('admin/footer');
@@ -112,6 +115,7 @@ class Admin extends CI_Controller
 		$data['bg2'] = '';
 		$data['bg4'] = '';
 		$data['bg1'] = '';
+		$data['bg5'] = '';
 		$this->load->model('berita_model');
 		$data['berita'] = $this->berita_model->getidberita();
 		$this->load->view('admin/navbar', $data);
@@ -132,17 +136,81 @@ class Admin extends CI_Controller
 		$this->berita_model->hapusberita();
 		redirect('admin/berita');
 	}
+
+	public function eskul()
+	{
+		$data['bg4'] = 'active';
+		$data['bg2'] = '';
+		$data['bg3'] = '';
+		$data['bg1'] = '';
+		$data['bg5'] = '';
+		$this->load->model('eskul_model');
+		$data['eskul'] = $this->eskul_model->geteskul();
+		$this->load->view('admin/navbar', $data);
+		$this->load->view('Ekstrakulikuler/eskul', $data);	
+		$this->load->view('admin/footer');
+	}
+
+	public function tambah_eskul()
+	{
+		$data['bg4'] = 'active';
+		$data['bg1'] = '';
+		$data['bg3'] = '';
+		$data['bg2'] = '';
+		$data['bg5'] = '';
+		$this->load->view('admin/navbar', $data);
+		$this->load->view('Ekstrakulikuler/eskul_tambah');	
+		$this->load->view('admin/footer');
+	}
+
+	public function post_eskul()
+	{
+		$this->load->model('eskul_model');
+		$this->eskul_model->tambaheskul();
+		redirect('admin/eskul');
+	}
+
+	public function edit_eskul($ideskul)
+	{
+		$data['bg4'] = 'active';
+		$data['bg1'] = '';
+		$data['bg3'] = '';
+		$data['bg2'] = '';
+		$data['bg5'] = '';
+		$this->load->model('eskul_model');
+		$data['eskul'] = $this->eskul_model->getideskul($ideskul);
+		$this->load->view('admin/navbar', $data);
+		$this->load->view('Ekstrakulikuler/eskul_edit', $data);
+		$this->load->view('admin/footer');
+	}
+	public function ngedit_eskul()
+	{
+		$this->load->model('eskul_model');
+		$this->eskul_model->editeskul();
+		redirect('admin/eskul');
+		
+	}
+	public function hapus_eskul()
+	{
+		$this->load->model('eskul_model');
+		$this->eskul_model->hapuseskul();
+		redirect('admin/eskul');
+	}
+
 	public function pelanggaran()
 	{
 		$this->load->model('siswa_model');
 		$data['pelanggaran'] = $this->siswa_model->getpelanggaran();
-		$data['bg4'] = 'active';
+		$data['bg5'] = 'active';
 		$data['bg3'] = '';
 		$data['bg2'] = '';
 		$data['bg1'] = '';
+		$data['bg4'] = '';
 		$this->load->view('admin/navbar', $data);
 		$this->load->view('admin/pelanggaran', $data);	
 		$this->load->view('admin/footer');
-		
 	}
+
+
+
 }

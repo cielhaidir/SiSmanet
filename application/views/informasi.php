@@ -1,11 +1,11 @@
  <!-- Berita  -->
  <section class="page-section">
- 	<div class="container p-5">
+ 	<div class="container p-5 mt-4">
  		<div class="row d-flex justify-content-center">
  			<div class="col-lg-8">
  				<div class="title text-center text-black">
  					<h1 class="mb-10">Berita Terbaru</h1>
- 					<p>Ikuti terus informasi dan berita-berita terbaru tentang <b>SMA NEGERI 7 WAJO</b>.</p>
+ 					<p>Ikuti terus informasi dan berita-berita terbaru tentang <b>SMA NEGERI 7 WAJO</b></p>
  				</div>
  			</div>
  		</div>
@@ -22,11 +22,11 @@
 							<p class="card-text">' . substr($br['isi_berita'], 0, 80) . '...<br><a href="informasi/berita?id_berita=' . $br['id_berita'] . '" class="text-black">
 							Baca Selengkapnya</a>' . '</p>
 							
-							<div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
-								<div>
-									<p class="fw-bold mb-0">Admin 1</p>
-									<p class="text-muted mb-0">2023 Januari</p>
-								</div>
+							<div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="'.base_url('assets/img/admin/').$foto[0]['foto'].'">
+							<div>
+								<p class="fw-bold mb-0">' . $br['nama_guru'] . '</p>
+								<p class="text-muted mb-0">' . $br['date'] . '</p>
+							</div>
 							</div>
 						</div>
 					</div>
@@ -40,12 +40,12 @@
 
  <!-- Agenda -->
  <section class="page-section bg-smanet">
- 	<div class="container p-5">
+ 	<div class="container mt-4">
  		<div class="row d-flex justify-content-center">
  			<div class="col-lg-8">
  				<div class="title text-center text-white">
  					<h1 class="mb-10">Agenda</h1>
- 					<p>Agenda terkini seputar <b>SMA NEGERI 7 WAJO</b>.</p>
+ 					<p>Agenda seputar <b>SMA NEGERI 7 WAJO</b></p>
  				</div>
  			</div>
  		</div>
@@ -60,13 +60,13 @@
 						<div class="card-body p-4">
 							<p class="text-primary card-text mb-0">Agenda</p>
 							<h4 class="card-title">' . $ag['judul'] . '</h4>
-							<p class="card-text">' . substr($ag['isi_agenda'], 0, 80) . '...<br><a href="informasi/agebda?id_agenda=' . $ag['id_agenda'] . '" class="text-black">
+							<p class="card-text">' . substr($ag['isi_agenda'], 0, 80) . '...<br><a href="informasi/agenda?id_agenda=' . $ag['id_agenda'] . '" class="text-black">
 							Baca Selengkapnya</a>' . '</p>
 							
-							<div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
+							<div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="'.base_url('assets/img/admin/').$foto[0]['foto'].'">
 								<div>
-									<p class="fw-bold mb-0">Admin 1</p>
-									<p class="text-muted mb-0">2023 Januari</p>
+									<p class="fw-bold mb-0">' . $br['nama_guru'] . '</p>
+									<p class="text-muted mb-0">' . $br['date'] . '</p>
 								</div>
 							</div>
 						</div>
