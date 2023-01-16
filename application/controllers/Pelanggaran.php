@@ -7,9 +7,6 @@ class Pelanggaran extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->helper('url');
-		if (!($this->session->userdata['data_user']['0']['nip'])) {
-			redirect('/home');
-		}
 	}
 	public function index()
 	{

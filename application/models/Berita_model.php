@@ -1,6 +1,6 @@
 <?php 
 
-class berita_model extends CI_Model {
+class Berita_model extends CI_Model {
 
 	function __construct(){
 		$this->load->database();

@@ -33,7 +33,7 @@
                 <div class="col-md-6 search-course-right welcoming-gap ">
                     <img src="assets/img/kepsek2.png" alt="Kepsek SMAN 7 WAJO" style="width: 100%;">
                 </div>
-                <div class="col-md-6 search-course-left">
+                <div class="col-md-6 search-course-left ps-5 pe-5">
                     <h1 class="text-white">
                         Assalamualaikum Wr. Wb
                     </h1>
@@ -48,7 +48,7 @@
                         khalayak umum
                         guna dapat mengakses seluruh informasi tentang segala profil, prestasi, aktifitas/kegiatan serta
                         data guru dan siswa sekolah. Website ini sebagai wujud rasa keinginan kami untuk menjadikan
-                        sekolah yang senantiasa mengikuti perkembangan teknologi dewasa ini
+                        sekolah yang senantiasa mengikuti perkembangan teknologi.
                     </p>
                     <p class="text-white">
                         Terima kasih semoga Allah ‘Azza Wa Jalla menyertai doa kita semua, amin.
